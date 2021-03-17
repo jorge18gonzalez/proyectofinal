@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM Sena</title>
+</head>
+<body>
+    <app-nav></app-nav>
+   <div *ngIf="load">
+        <div style="width: 250px; position: relative;left: 584px;" class="pt-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="form" (ngSubmit)="logeo()">
+                        <div class="from-group">
+                            <label for="">Usuario</label>
+                            <input type="text" placeholder="usuario" class="form-control" formControlName="email" >
+                        </div>
+                        <div class="from-group">
+                            <label for="">Contrasena</label>
+                            <input type="password" placeholder="contrasena" class="form-control"formControlName="password" >
+                        </div>
+                        <div class="from-group">
+                            <label for="">Rol</label>
+                            <select name="" id="" class="form-control" formControlName="rol">
+                                <option>selecione su rol </option>
+                                <option value="admin">administrador</option>
+                                <option value="user">usuario</option>
+                            </select>
+                        </div>
+                        <div class="from-group pt-3">
+                            <button type="submit" class="btn btn-success">login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div *ngIf="!load" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+  <app-footer></app-footer>
+</body>
+</html>

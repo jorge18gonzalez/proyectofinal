@@ -1,0 +1,33 @@
+@charset "utf-8";
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+footer{padding:20px; margin-top:20px; color:#000; background-color:#ff6600; text-align: center;}
+select {width: 42%; height: 50px; margin: 25px; padding-left: 5px; font-size: 20px;}
+
+.logos {width: 100%; height: 200px; display: flex; justify-content: space-between;}
+.titulo {font-size: 25px;}
+.logo {width: 200px; margin: 10px 20px; border-right: 3px solid black;}
+.logo img {width: 150px; height: 150px;}
+.logo1 img {width: 400px; height: 90px;}
+.botones {width: 100%; height: 70px; display: flex; justify-content: flex-end; align-content: center; 
+    border-bottom: 1px solid #0000003f;}
+.enlaces a {padding: 20px; font-size: 25px; color: #000; text-decoration: none;}
+.enlaces a:hover {background-color: #f5974b; border-bottom:#ff6600 2px solid;}
+
+.contenedor {width: 100%; height: 550px; display: flex; padding-top: 30px; justify-content: center;
+    align-content: center; flex-wrap: wrap;}
+.texto {width: 35%; height: 500px; padding-left: 30px; margin-left: 50px;}
+.texto h2 {font-size: 50px; color: #ff6a07; margin-bottom: 20px;}
+.texto1 {margin: 10px 30px 0 20px; font-size: 26px; font-weight: 700; padding: 10px; border-left: 10px solid #ff6a07;}
+.botonColores {width: 80%; margin: 150px 30px 10px 20px; display: flex; justify-content: space-evenly;}
+.azul {width: 80px; height: 80px; margin: 25px; border-radius: 50%; background-color: #2600ff;}
+.verde {width: 80px; height: 80px; margin: 25px; border-radius: 50%; background-color: #00ff37;}
+.rojo {width: 80px; height: 80px; margin: 25px; border-radius: 50%; background-color: #ff0000;}
+.opcion {text-align: center; font-size: 20px;}
+
+.datos {width: 50%;}
+.tituloDatos {margin-left: 35%; font-size: 20px;}
+.datos input {width: 42%; height: 50px; margin: 25px; padding-left: 5px; font-size: 20px; border: 1px solid #68686850;}
+.datos .boton {width: 120px; border: none; font-size: 20px; background-color: #ff6a07;}
+
+

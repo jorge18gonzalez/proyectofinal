@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM Sena</title>
+</head>
+<body>
+    <app-nav></app-nav>
+        <div class="container pb-2 pt-3">
+            <form>
+                <div class="card">
+                    <div class="card-header">
+                        crear anuncios
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="">descripcion</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">nombre</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">imagen</label>
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button class="btn btn-success mt-4">enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="load">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <app-footer></app-footer>
+</body>
+</html>

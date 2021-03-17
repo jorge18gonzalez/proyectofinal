@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM Sena</title>
+</head>
+<body>
+    <app-nav></app-nav>
+   <div *ngIf="load">
+        <div class="container pb-2 pt-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    calcular test
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="form" (ngSubmit)="generar()">
+                        <div class="row">
+                            <div class="from-group col-md-6" >
+                                <label for="">Talla:</label>
+                                <input type="number" placeholder="talla" class="form-control"   formControlName="talla">
+                            </div>
+                            <div class="from-group col-md-6" >
+                                <label for="">Peso</label>
+                                <input type="number" placeholder="peso" class="form-control"[(ngModel)]="obj.peso" formControlName="peso">
+                            </div>
+                        </div>
+                        <div class="from-group pt-3">
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div *ngIf="!load" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+  <app-footer></app-footer>
+</body>
+</html>
