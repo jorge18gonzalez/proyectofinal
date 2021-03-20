@@ -4,30 +4,31 @@ from flask import jsonify, request
 from modelo import *
 from config import KEY_TOKEN_AUTH
 import bcrypt
+import datetime
 
 
-comexion = Login();
+ingresar = Login();
 test = Test();
-user = User()
 
 
-class  RegisterControllers(MethodView):
+class PruebaControllers(MethodView):
 
-    def post(seft):
+    def post(self):
         content = request.get_json()
-        userName = content.get("user")
-        userPass = content.get("pass")
-        rol = content.get("rol")
+        print(content , '----------')
+        correo = content.get("correo")
+        password = content.get("password")
+       
 
         salt = bcrypt.gensalt()
-        hash_password = bcrypt.hashpw(bytes(str( userPass), encoding= 'utf-8'), salt)
-        registro = user.guardar(  userName ,  userPass  , rol)
+        hash_password = bcrypt.checkpw(bytes(str(password) , encoding = 'utf-8') , salt)
 
-        if registro:
-            return  jsonify({"Status": "exito"}),200
+        resp = prueba.guardar(correo , hash_password)
 
-
-
+        if resp:
+            return jsonify({"status":"insertado"}),200
+        else:
+            return jsonify({"status":"error"}),500
 
 class LoginControllers(MethodView):
     """
@@ -35,19 +36,18 @@ class LoginControllers(MethodView):
     """
     def post(self):
         content = request.get_json()
-        email = content.get("email")
+        correo = content.get("email")
         password = content.get("password")
-        rol = content.get("rol") 
+       
         
         salt = bcrypt.gensalt()
         hash_password = bcrypt.hashpw(bytes(str(password), encoding= 'utf-8'), salt)
-        encoded_jwt = jwt.encode({'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=300), 'email': email , 'rol': rol}, KEY_TOKEN_AUTH , algorithm='HS256')
-
-        resp = conexion.ingresar(email , hash_password , rol)
+        final_password = hash_password.decode()
+        print(final_password)
+        resp = ingresar.ingresar(correo ,final_password)
         if resp:
-            return jsonify({"Status": "Registro ok",
-            "password_encriptado": hash_password.decode(),
-            "password_plano": password}), 200
+            encoded_jwt = jwt.encode({'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=300), 'email': correo }, KEY_TOKEN_AUTH , algorithm='HS256')
+            return jsonify({"Status": "Login ok" , "token":encoded_jwt }), 200
         else:   
             return jsonify({"Status": "error"}),500
 

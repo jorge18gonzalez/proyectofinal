@@ -5,6 +5,7 @@ import {ListarAnunciosComponent}from './listar-anuncios/listar-anuncios.componen
 import{ListarTestComponent}from'./listar-test/listar-test.component';
 import{ LoginComponent}from './login/login.component';
 import{GenerarTestComponent} from './generar-test/generar-test.component';
+import{ RegistroComponent}from './registro/registro.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'anuncios/listar' , component:ListarAnunciosComponent},
   {path:'test/listar' , component:ListarTestComponent},
   {path:'test' , component:GenerarTestComponent}, 
+  {path:'registro' , component:RegistroComponent}
 ];
 
 @NgModule({

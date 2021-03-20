@@ -13,6 +13,7 @@ import { ListarAnunciosComponent } from './listar-anuncios/listar-anuncios.compo
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { GenerarTestComponent } from './generar-test/generar-test.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 
@@ -27,6 +28,7 @@ import { GenerarTestComponent } from './generar-test/generar-test.component';
     NavComponent,
     FooterComponent,
     GenerarTestComponent,
+    RegistroComponent,
   
 
   ],

@@ -65,4 +65,11 @@ export class ClienteService {
     return this.Http.put(route , data ,config)
 
   }
+
+  postPrueba(route: string , data?:any){
+    let config:any = {
+      responseType:"json"
+  }
+  return this.Http.post(route , data , config);
+  }
 }

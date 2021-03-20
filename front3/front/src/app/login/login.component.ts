@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
   //login
 
  async logeo(){
+   console.log(this.form.value.password,);
+   
     if (this.form.valid) {
      this.Cliente.login('http://localhost:5000/api/v01/login' ,{
         email:this.form.value.email,
@@ -47,7 +49,9 @@ export class LoginComponent implements OnInit {
           this.Auth.login(response.token)
 
           //recogemos el nombre
-          this.Auth.setCourrentUser(response.name)
+          this.Auth.setCourrentUser(response.correo)
+          console.log( this.Auth.setCourrentUser(response.correo));
+          
 
           this.load = true;
           Swal.fire({
@@ -55,18 +59,10 @@ export class LoginComponent implements OnInit {
             title: 'login exitoso',
             text: 'esta ciendo redirigido',
           })
-        
           this.Router.navigate(['test/listar']);
-        
-          console.log(response);
-
-         
-          this.Router.navigate(['/'])
         }
       )
     }
-
-    
     this.load = false;
   
     setTimeout(() => {

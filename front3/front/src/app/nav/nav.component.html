@@ -31,7 +31,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-  
+              <li *ngIf="auth.isLoggedIn() | async" class="nav-item active">
+                <a class="nav-link" >|Bienvenid@ {{auth.getCourrentUser()}}|<span class="sr-only"></span></a>
+              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLink]="['/']">login</a>
               </li>
@@ -49,6 +52,9 @@
               
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLink]="['/test/listar']">Listar Test</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/registro']">registrot</a>
               </li>
   
             </ul>
